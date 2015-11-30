@@ -1,0 +1,529 @@
+genre,year,score
+early music,1910,0
+early music,1920,0
+early music,1930,0
+early music,1940,0
+early music,1950,0
+early music,1960,0
+early music,1970,0
+early music,1980,0
+early music,1990,0
+early music,2000,0
+early music,2010,0
+renaissance,1910,0
+renaissance,1920,0
+renaissance,1930,0
+renaissance,1940,0
+renaissance,1950,0
+renaissance,1960,0
+renaissance,1970,0
+renaissance,1980,0
+renaissance,1990,0
+renaissance,2000,0
+renaissance,2010,0
+classical performance,1910,0
+classical performance,1920,0
+classical performance,1930,0
+classical performance,1940,0
+jazz christmas,1900,0
+swing,1900,0
+big band,1900,0
+christmas,1900,0
+lounge,1900,0
+adult standards,1900,0
+vocal jazz,1900,0
+jazz,1900,0
+cabaret,1900,0
+jazz blues,1900,0
+mellow gold,1910,0
+mellow gold,1900,0
+mellow gold,1920,0
+mellow gold,1930,0
+mellow gold,1940,0
+mellow gold,1950,0
+rock,1910,0
+rock,1900,0
+rock,1940,0
+rock,1930,0
+rock,1920,0
+rock,1950,0
+soul christmas,1900,0
+soul christmas,1910,0
+soul christmas,1920,0
+soul christmas,1940,0
+soul christmas,1930,0
+folk rock,1900,0
+folk rock,1910,0
+folk rock,1920,0
+folk rock,1930,0
+singer-songwriter,1900,0
+singer-songwriter,1920,0
+singer-songwriter,1910,0
+singer-songwriter,1940,0
+singer-songwriter,1950,0
+singer-songwriter,1930,0
+soft rock,1900,0
+soft rock,1910,0
+soft rock,1930,0
+soft rock,1920,0
+soft rock,1940,0
+soft rock,1950,0
+classic rock,1900,0
+classic rock,1910,0
+classic rock,1920,0
+album rock,1900,0
+album rock,1910,0
+album rock,1920,0
+album rock,1930,0
+album rock,1940,0
+album rock,1950,0
+roots rock,1910,0
+roots rock,1900,0
+roots rock,1920,0
+roots rock,1940,0
+roots rock,1950,0
+roots rock,1930,0
+folk christmas,1900,0
+blues-rock,1900,0
+blues-rock,1910,0
+blues-rock,1920,0
+pop christmas,1900,0
+pop christmas,1910,0
+pop christmas,1920,0
+pop christmas,1930,0
+pop christmas,1940,0
+pop christmas,1950,0
+permanent wave,1900,0
+permanent wave,1910,0
+permanent wave,1920,0
+permanent wave,1940,0
+permanent wave,1930,0
+permanent wave,1950,0
+hard rock,1900,0
+hard rock,1910,0
+hard rock,1920,0
+hard rock,1930,0
+hard rock,1940,0
+hard rock,1950,0
+dance pop,1900,0
+dance pop,1910,0
+dance pop,1920,0
+dance pop,1930,0
+dance pop,1940,0
+dance pop,1950,0
+dance pop,1960,0
+pop,1900,0
+pop,1910,0
+pop,1930,0
+pop,1920,0
+pop,1940,0
+pop,1950,0
+pop,1960,0
+pop,1970,0
+hurban,1900,0
+hurban,1910,0
+hurban,1920,0
+hurban,1930,0
+hurban,1940,0
+latin,1900,0
+latin,1910,0
+latin,1920,0
+latin,1930,0
+latin,1940,0
+latin,1950,0
+latin,1960,0
+latin pop,1900,0
+latin pop,1920,0
+latin pop,1910,0
+latin pop,1930,0
+latin pop,1940,0
+latin pop,1950,0
+latin pop,1960,0
+edm,1900,0
+edm,1910,0
+edm,1920,0
+edm,1930,0
+edm,1940,0
+edm,1950,0
+edm,1960,0
+edm,1970,0
+edm,1980,0
+electro house,1900,0
+electro house,1910,0
+electro house,1920,0
+electro house,1930,0
+electro house,1940,0
+electro house,1950,0
+electro house,1960,0
+electro house,1970,0
+electro house,1980,0
+pop rap,1900,0
+pop rap,1910,0
+pop rap,1920,0
+pop rap,1930,0
+pop rap,1940,0
+pop rap,1950,0
+pop rap,1960,0
+pop rap,1970,0
+pop rap,1980,0
+house,1900,0
+house,1910,0
+house,1920,0
+house,1930,0
+house,1940,0
+house,1950,0
+house,1960,0
+house,1970,0
+hip hop,1900,0
+hip hop,1910,0
+hip hop,1920,0
+hip hop,1930,0
+hip hop,1940,0
+hip hop,1950,0
+hip hop,1960,0
+hip hop,1970,0
+baroque,1960,0.2
+baroque,1970,0.2
+baroque,1980,0.2
+baroque,1990,0.2
+baroque,2000,0.2
+baroque,2010,0.2
+classical period,1970,0.2
+classical period,1980,0.2
+classical period,1990,0.2
+classical period,2000,0.2
+classical period,2010,0.2
+classical performance,1950,0.2
+classical performance,1960,0.2
+dance pop,1970,0.2
+hurban,1950,0.2
+hurban,1960,0.2
+hurban,1970,0.2
+latin,1970,0.2
+latin pop,1970,0.2
+house,1980,0.2
+classical performance,1970,0.4
+hip hop,1980,0.4
+classical performance,1980,0.6
+classical performance,1990,0.6
+classical performance,2000,0.6
+classical performance,2010,0.6
+hurban,1980,0.6
+latin,1980,0.8
+latin pop,1980,0.8
+baroque,1930,1
+baroque,1940,1
+baroque,1950,1
+early music,1900,1
+classical period,1920,1
+classical period,1930,1
+classical period,1940,1
+classical period,1950,1
+classical period,1960,1
+renaissance,1900,1
+big band,1910,1
+jazz,1910,1
+jazz blues,1910,1
+folk rock,1940,1
+folk rock,1950,1
+classic rock,1930,1
+classic rock,1940,1
+folk christmas,1910,1
+folk christmas,1920,1
+blues-rock,1930,1
+blues-rock,1940,1
+pop christmas,1960,1
+permanent wave,1960,1
+hard rock,1960,1.4
+album rock,1960,1.6
+electro house,1990,1.6
+folk christmas,1950,1.8
+edm,1990,1.8
+classical period,1900,2
+classical period,1910,2
+classical performance,1900,2
+swing,1910,2
+lounge,1910,2
+adult standards,1920,2
+vocal jazz,1910,2
+jazz blues,1920,2
+folk christmas,1930,2
+avant-garde,1960,2.2
+avant-garde,1970,2.2
+avant-garde,1980,2.2
+avant-garde,1990,2.2
+avant-garde,2000,2.2
+avant-garde,2010,2.2
+folk christmas,1940,2.2
+pop,1980,2.2
+hurban,1990,2.4
+swing,1990,2.8
+swing,2000,2.8
+swing,2010,2.8
+latin,1990,2.8
+latin pop,1990,2.8
+baroque,1920,3
+jazz christmas,1910,3
+lounge,1920,3
+adult standards,1910,3
+jazz,1920,3
+modern classical,1970,3.2
+avant-garde,1950,3.2
+jazz blues,1930,3.2
+house,1990,3.2
+modern classical,1980,3.4
+modern classical,1990,3.4
+modern classical,2000,3.4
+modern classical,2010,3.4
+modern classical,1960,3.6
+swing,1980,3.6
+jazz blues,1940,3.6
+soul christmas,1950,3.6
+classical christmas,1970,3.8
+classical christmas,1980,3.8
+classical christmas,1990,3.8
+modern classical,1950,3.8
+classical christmas,2000,4
+classical christmas,2010,4
+avant-garde,1940,4
+swing,1920,4
+big band,1920,4
+christmas,1910,4
+christmas,1920,4
+vocal jazz,1920,4
+cabaret,1910,4
+dance pop,1980,4.2
+hurban,2000,4.2
+classical christmas,1960,4.4
+avant-garde,1930,4.4
+swing,1970,4.4
+rock,1960,4.6
+latin pop,2000,4.6
+big band,1980,4.8
+latin,2000,4.8
+latin pop,2010,4.8
+baroque,1910,5
+big band,1990,5
+big band,2010,5
+big band,2000,5
+pop christmas,1970,5.2
+hurban,2010,5.2
+modern classical,1940,5.4
+latin,2010,5.4
+big band,1970,5.6
+pop,1990,5.6
+pop rap,1990,5.6
+cabaret,1980,5.8
+cabaret,1990,5.8
+jazz christmas,1920,6
+swing,1960,6
+cabaret,1920,6
+classic rock,1950,6
+romantic,1970,6.2
+romantic,1980,6.2
+romantic,1990,6.2
+romantic,2000,6.2
+romantic,2010,6.2
+vocal jazz,1990,6.2
+cabaret,2000,6.2
+cabaret,2010,6.2
+permanent wave,1970,6.4
+classical,1970,6.6
+classical,1980,6.6
+classical,1990,6.6
+classical,2000,6.6
+classical,2010,6.6
+vocal jazz,2000,6.6
+cabaret,1970,6.6
+romantic,1960,6.8
+vocal jazz,2010,6.8
+edm,2000,6.8
+baroque,1900,7
+avant-garde,1920,7
+vocal jazz,1980,7
+blues-rock,1950,7
+blues-rock,1960,7
+classical,1960,7.2
+big band,1960,7.2
+vocal jazz,1930,7.2
+jazz,1930,7.2
+cabaret,1930,7.2
+folk christmas,1960,7.2
+electro house,2000,7.2
+modern classical,1930,7.4
+swing,1930,7.4
+lounge,1990,7.4
+roots rock,1960,7.4
+avant-garde,1900,8
+avant-garde,1910,8
+folk rock,1960,8
+soft rock,1960,8
+big band,1930,8.2
+lounge,1930,8.2
+lounge,1980,8.2
+adult standards,1930,8.2
+classical christmas,1950,8.4
+swing,1950,8.4
+singer-songwriter,1960,8.4
+cabaret,1960,8.6
+vocal jazz,1970,9
+dance pop,1990,9
+swing,1940,9.2
+christmas,1930,9.2
+jazz blues,1980,9.2
+jazz blues,1990,9.4
+jazz blues,2000,9.4
+jazz blues,2010,9.4
+classic rock,1960,9.4
+house,2000,9.4
+lounge,1970,9.6
+lounge,2000,9.6
+jazz,1940,9.6
+lounge,2010,9.8
+jazz,1970,9.8
+jazz,1980,9.8
+jazz,2000,9.8
+jazz,2010,9.8
+modern classical,1900,10
+modern classical,1920,10
+jazz christmas,2000,10
+jazz christmas,2010,10
+adult standards,2000,10
+adult standards,2010,10
+adult standards,1990,10
+soft rock,2000,10
+soft rock,2010,10
+jazz,1990,10.4
+cabaret,1950,10.6
+mellow gold,1960,10.6
+jazz christmas,1990,10.8
+big band,1940,10.8
+christmas,1990,10.8
+christmas,2000,10.8
+christmas,2010,10.8
+adult standards,1970,10.8
+adult standards,1980,10.8
+cabaret,1940,10.8
+mellow gold,2010,10.8
+soft rock,1990,10.8
+edm,2010,10.8
+electro house,2010,10.8
+house,2010,10.8
+modern classical,1910,11
+jazz blues,1960,11
+jazz blues,1970,11.2
+jazz christmas,1930,11.4
+big band,1950,11.4
+jazz christmas,1980,11.6
+christmas,1980,11.6
+mellow gold,2000,11.6
+folk rock,2010,11.6
+singer-songwriter,2010,11.6
+roots rock,2010,11.6
+folk christmas,2010,11.6
+folk christmas,2000,11.6
+hip hop,1990,11.6
+vocal jazz,1940,11.8
+jazz,1960,12.2
+jazz blues,1950,12.2
+lounge,1960,12.4
+vocal jazz,1950,12.4
+soul christmas,2000,12.4
+soul christmas,2010,12.4
+folk rock,2000,12.4
+singer-songwriter,2000,12.4
+soft rock,1980,12.4
+roots rock,2000,12.4
+blues-rock,2010,12.4
+blues-rock,2000,12.4
+pop christmas,1980,12.4
+adult standards,1940,12.6
+classical christmas,1940,12.8
+romantic,1950,13
+adult standards,1960,13
+vocal jazz,1960,13
+christmas,1970,13.2
+lounge,1940,13.2
+folk rock,1990,13.2
+singer-songwriter,1990,13.2
+classic rock,2010,13.2
+roots rock,1990,13.2
+folk christmas,1990,13.2
+dance pop,2000,13.2
+pop,2000,13.2
+adult standards,1950,13.4
+lounge,1950,14
+mellow gold,1990,14
+soul christmas,1970,14
+soul christmas,1980,14
+soul christmas,1990,14
+folk rock,1980,14
+classic rock,2000,14
+roots rock,1980,14
+folk christmas,1980,14
+blues-rock,1990,14
+hard rock,1970,14
+classical,1950,14.2
+christmas,1940,14.6
+christmas,1950,14.6
+folk christmas,1970,14.6
+permanent wave,1980,14.6
+jazz christmas,1970,14.8
+singer-songwriter,1980,14.8
+album rock,2010,14.8
+dance pop,2010,14.8
+pop rap,2000,14.8
+classical christmas,1930,15
+soul christmas,1960,15.4
+mellow gold,1980,15.6
+soft rock,1970,15.6
+classic rock,1990,15.6
+album rock,2000,15.6
+blues-rock,1980,15.6
+pop christmas,1990,15.6
+pop,2010,15.6
+pop rap,2010,15.6
+hip hop,2000,15.6
+hard rock,2010,16.4
+hip hop,2010,16.4
+hard rock,1990,17.2
+hard rock,2000,17.2
+classic rock,1980,18
+album rock,1990,18
+roots rock,1970,18
+blues-rock,1970,18
+pop christmas,2000,18
+hard rock,1980,18
+christmas,1960,18.2
+classical christmas,1920,19
+romantic,1940,19.2
+jazz christmas,1940,19.2
+jazz,1950,19.4
+folk rock,1970,19.6
+pop christmas,2010,19.6
+classical,1940,20.2
+singer-songwriter,1970,20.4
+permanent wave,1990,20.4
+classic rock,1970,21.2
+album rock,1980,21.2
+permanent wave,2010,21.2
+classical christmas,1910,22
+jazz christmas,1960,22
+mellow gold,1970,22
+permanent wave,2000,22.8
+album rock,1970,23.6
+classical christmas,1900,24
+classical,1930,25.4
+romantic,1930,25.4
+rock,2010,29.2
+jazz christmas,1950,29.4
+rock,1970,30.8
+rock,1980,30.8
+rock,1990,30.8
+rock,2000,31.6
+classical,1920,33
+romantic,1920,33
+classical,1910,37
+romantic,1910,37
+romantic,1900,41
+classical,1900,42
