@@ -180,10 +180,17 @@ function getTop10ByDecade(decade)
    
 }
 
-$('#setDecade').change(function() {
+$('#u1-setDecade').change(function() {
     // console.log($(this).val());
-    $(".top-genres").html("");
-    $(".top-artists").html("");
+    $(".u1-top-genres").html("");
+    $(".u1-top-artists").html("");
+    getall($(this).val());
+    getTop10ByDecade($(this).val());
+});
+$('#u2-setDecade').change(function() {
+    // console.log($(this).val());
+    $(".u2-top-genres").html("");
+    $(".u2-top-artists").html("");
     getall($(this).val());
     getTop10ByDecade($(this).val());
 });

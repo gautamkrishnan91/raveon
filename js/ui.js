@@ -1,12 +1,15 @@
 $(document).ready(function() {
-	$("#top10").prop("checked", true);
+	$("#u1-top10").prop("checked", true);
+	$("#u2-top10").prop("checked", true);
 	$("#searchArtists").prop("checked", true);
 	getArtistData();
 	$(".search-holder").hide();
 	$(".mymix").hide();
 	$(".searchFor").hide();
-	$("#genre_class").attr('checked', true);
-	$("#getRelatedGenre").hide();
+	$("#u1-genre_class").attr('checked', true);
+	$("#u2-genre_class").attr('checked', true);
+	$("#u1-getRelatedGenre").hide();
+	$("#u2-getRelatedGenre").hide();
 	get10GenresListForDecade("all");
 /* Initial filters */
 });
@@ -53,22 +56,45 @@ $("#u1-colorpicker-dd li").click(function(){
 $("#u1-colorpicker").click(function(){
 	$("#u1-colorpicker-dd").show();
 });
+$("#u2-colorpicker-dd li").click(function(){
+	less.modifyVars({
+	  '@primarycolor2': $(this).css("background-color")
+	});
+	$("#u2-colorpicker-dd").hide();
+});
+$("#u2-colorpicker").click(function(){
+	$("#u2-colorpicker-dd").show();
+});
 
 // For decade search
 // Showing and hiding decade options
-$('#setDecade').change(function() {
+$('#u1-setDecade').change(function() {
     var value = $(this).val();
     if(value != "decade"){
-    	$("#decadeExtension").addClass("open");
+    	$("#u1-decadeExtension").addClass("open");
     	get10GenresListForDecade(value);
     }
     else{
-    	$("#decadeExtension").removeClass("open");	
+    	$("#u1-decadeExtension").removeClass("open");	
     }
 });
-$("#closeDecade").click(function(){
-	$("#decadeExtension").removeClass("open");	
-	$("#setDecade").val('1');
+$('#u2-setDecade').change(function() {
+    var value = $(this).val();
+    if(value != "decade"){
+    	$("#u2-decadeExtension").addClass("open");
+    	get10GenresListForDecade(value);
+    }
+    else{
+    	$("#u2-decadeExtension").removeClass("open");	
+    }
+});
+$("#u1-closeDecade").click(function(){
+	$("#u1-decadeExtension").removeClass("open");	
+	$("#u1-setDecade").val('1');
+});
+$("#u2-closeDecade").click(function(){
+	$("#u2-decadeExtension").removeClass("open");	
+	$("#u2-setDecade").val('1');
 });
 $("#topArtists").click(function(){
 	$(".top-genres").hide();
@@ -126,14 +152,28 @@ $("#video").click(function(){
 });
 
 // Switching between C range and B/A
-$("#top10").click(function(){
-	console.log($('input[name="initialFilter"]:checked').val());
+$("#u1-top10").click(function(){
+	// console.log($('input[name="initialFilter"]:checked').val());
 	$(".search-holder").hide();
 	$(".mymix").hide();
 	$(".searchFor").hide();
 });
-$("#mymix").click(function(){
-	console.log($('input[name="initialFilter"]:checked').val());
+$("#u1-mymix").click(function(){
+	// console.log($('input[name="initialFilter"]:checked').val());
+	$(".search-holder").show();
+	$(".mymix").show();
+	$(".searchFor").show();
+	map.removeLayer(markerLayerTop10);
+	
+});
+$("#u2-top10").click(function(){
+	// console.log($('input[name="initialFilter"]:checked').val());
+	$(".search-holder").hide();
+	$(".mymix").hide();
+	$(".searchFor").hide();
+});
+$("#u2-mymix").click(function(){
+	// console.log($('input[name="initialFilter"]:checked').val());
 	$(".search-holder").show();
 	$(".mymix").show();
 	$(".searchFor").show();
@@ -142,93 +182,176 @@ $("#mymix").click(function(){
 });
 
 // Changing search - Artists and Genres
-$("#artist_class").click(function(){
-	$("#my-input").attr("placeholder","Search for Artists");
-	$("#getRelatedArtist").hide();
-	$("#getRelatedGenre").show();
-	$("#showingRelated").removeClass("open");
-	$("#my-input").val("");
+$("#u1-artist_class").click(function(){
+	$("#u1-my-input").attr("placeholder","Search for Artists");
+	$("#u1-getRelatedArtist").hide();
+	$("#u1-getRelatedGenre").show();
+	$("#u1-showingRelated").removeClass("open");
+	$("#u1-my-input").val("");
 });
-$("#genre_class").click(function(){
-	$("#my-input").attr("placeholder","Search for Genres");
-	$("#getRelatedGenre").hide();
-	$("#getRelatedArtist").show();
-	$("#showingRelated").removeClass("open");
-	$("#my-input").val("");
+$("#u1-genre_class").click(function(){
+	$("#u1-my-input").attr("placeholder","Search for Genres");
+	$("#u1-getRelatedGenre").hide();
+	$("#u1-getRelatedArtist").show();
+	$("#u1-showingRelated").removeClass("open");
+	$("#u1-my-input").val("");
 });
-$("#getRelatedGenre").click(function(){
-	$("#showingRelated").addClass("open");
-	$("#showingRelated .dd-results").html("");
-	$("#showingRelated .tab_single").html("Genres of this artist");
+$("#u2-artist_class").click(function(){
+	$("#u2-my-input").attr("placeholder","Search for Artists");
+	$("#u2-getRelatedArtist").hide();
+	$("#u2-getRelatedGenre").show();
+	$("#u2-showingRelated").removeClass("open");
+	$("#u2-my-input").val("");
+});
+$("#u2-genre_class").click(function(){
+	$("#u2-my-input").attr("placeholder","Search for Genres");
+	$("#u2-getRelatedGenre").hide();
+	$("#u2-getRelatedArtist").show();
+	$("#u2-showingRelated").removeClass("open");
+	$("#u2-my-input").val("");
+});
+$("#u1-getRelatedGenre").click(function(){
+	$("#u1-showingRelated").addClass("open");
+	$("#u1-showingRelated .dd-results").html("");
+	$("#u1-showingRelated .tab_single").html("Genres of this artist");
 	// Clear results and add
-	$("#showingRelated .dd-results").html("");
-	getGenreByArtist($("#my-input").val());
+	$("#u1-showingRelated .dd-results").html("");
+	getGenreByArtist($("#u1-my-input").val());
 });
-$("#getRelatedArtist").click(function(){
-	$("#showingRelated").addClass("open");
-	$("#showingRelated .dd-results").html("");
-	$("#showingRelated .tab_single").html("Artists belonging to this genre");
+$("#u1-getRelatedArtist").click(function(){
+	$("#u1-showingRelated").addClass("open");
+	$("#u1-showingRelated .dd-results").html("");
+	$("#u1-showingRelated .tab_single").html("Artists belonging to this genre");
 	// Clear results and add
-	$("#showingRelated .dd-results").html("");
-	getSimilarArtistByGenre($("#my-input").val());
+	$("#u1-showingRelated .dd-results").html("");
+	getSimilarArtistByGenre($("#u1-my-input").val());
+});
+$("#u2-getRelatedGenre").click(function(){
+	$("#u2-showingRelated").addClass("open");
+	$("#u2-showingRelated .dd-results").html("");
+	$("#u2-showingRelated .tab_single").html("Genres of this artist");
+	// Clear results and add
+	$("#u2-showingRelated .dd-results").html("");
+	getGenreByArtist($("#u2-my-input").val());
+});
+$("#u2-getRelatedArtist").click(function(){
+	$("#u2-showingRelated").addClass("open");
+	$("#u2-showingRelated .dd-results").html("");
+	$("#u2-showingRelated .tab_single").html("Artists belonging to this genre");
+	// Clear results and add
+	$("#u2-showingRelated .dd-results").html("");
+	getSimilarArtistByGenre($("#u2-my-input").val());
 });
 
 // Add to my mix
-$(".add-button").click(function(){
+$("#u1-add-button").click(function(){
 
-	var value = $("#my-input").val();
-	var type = $("input[name='searchFor']:checked").val();
+	var value = $("#u1-my-input").val();
+	var type = $("#user1 input[name='searchFor']:checked").val();
 	var returned = mymixappend(value,1,buildGlobalMyMix,type);
 	if (returned == true){
-		$(".mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
-		$("#my-input").val("");
-		$("#my-input").focus();
+		$("#user1 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
+		$("#u1-my-input").val("");
+		$("#u1-my-input").focus();
 	}
 	else{
 		alert("Item already exists in your mix or it is an invalid item");
-		$("#my-input").val("");
-		$("#my-input").focus();
+		$("#u1-my-input").val("");
+		$("#u1-my-input").focus();
+	}
+});
+$("#u2-add-button").click(function(){
+
+	var value = $("#u2-my-input").val();
+	var type = $("#user2 input[name='searchFor']:checked").val();
+	var returned = mymixappend(value,2,buildGlobalMyMix,type);
+	if (returned == true){
+		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
+		$("#u2-my-input").val("");
+		$("#u2-my-input").focus();
+	}
+	else{
+		alert("Item already exists in your mix or it is an invalid item");
+		$("#u2-my-input").val("");
+		$("#u2-my-input").focus();
 	}
 });
 // Adding from related
-$("#showingRelatedResults").on('click', 'li', function () {
+$("#u1-showingRelatedResults").on('click', 'li', function () {
     var value = $(this).html();
 	if (value != ""){
-		if($("input[name='searchFor']:checked").val()=="genre"){
+		if($("#user1 input[name='searchFor']:checked").val()=="genre"){
 			var type = "artist";
 		}
 		else{
 			var type = "genre";
 		}
-		$(".mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
-		$("#my-input").val("");
+		$("#user1 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
+		$("#u1-my-input").val("");
+	}
+});
+$("#u2-showingRelatedResults").on('click', 'li', function () {
+    var value = $(this).html();
+	if (value != ""){
+		if($("#user2 input[name='searchFor']:checked").val()=="genre"){
+			var type = "artist";
+		}
+		else{
+			var type = "genre";
+		}
+		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
+		$("#u2-my-input").val("");
 	}
 });
 // Adding from decade list
-$(".top-artists").on('click', 'li', function () {
+$("#user1 .top-artists").on('click', 'li', function () {
     var value = $(this).html();
 	if (value != ""){
 		$(".mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(artist)</span><div class='delete'></div></li>");
-		$("#my-input").val("");
+		$("#u1-my-input").val("");
 	}
 });
-$(".top-genres").on('click', 'li', function () {
+$("#user1 .top-genres").on('click', 'li', function () {
     var value = $(this).html();
 	if (value != ""){
-		$(".mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(genre)</span><div class='delete'></div></li>");
-		$("#my-input").val("");
+		$("#user1 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(genre)</span><div class='delete'></div></li>");
+		$("#u1-my-input").val("");
+	}
+});
+$("#user2 .top-artists").on('click', 'li', function () {
+    var value = $(this).html();
+	if (value != ""){
+		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(artist)</span><div class='delete'></div></li>");
+		$("#u2-my-input").val("");
+	}
+});
+$("#user2 .top-genres").on('click', 'li', function () {
+    var value = $(this).html();
+	if (value != ""){
+		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(genre)</span><div class='delete'></div></li>");
+		$("#u2-my-input").val("");
 	}
 });
 // Close related artists
-$("#closeRelated").click(function(){
-	$("#showingRelated").removeClass("open");
+$("#u1-closeRelated").click(function(){
+	$("#u1-showingRelated").removeClass("open");
+});
+$("#u2-closeRelated").click(function(){
+	$("#u2-showingRelated").removeClass("open");
 });
 
 // Clicking on my mix list
-$(".mix-list").on('click', 'li', function () {
+$("#user1 .mix-list").on('click', 'li', function () {
 	if($(this).find("span").html()=="(artist)"){
 		var value = $(this).find("a").html();
-		$(".artist-genre").html("");
+		$("#user1 .artist-genre").html("");
+		getDataForPopup(value);
+	}
+});
+$("#user2 .mix-list").on('click', 'li', function () {
+	if($(this).find("span").html()=="(artist)"){
+		var value = $(this).find("a").html();
+		$("#user2 .artist-genre").html("");
 		getDataForPopup(value);
 	}
 });

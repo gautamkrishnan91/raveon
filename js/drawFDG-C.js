@@ -6,7 +6,7 @@ function drawFDG(){
   d3.csv("data/force.csv", function(error, links) {
   var color = d3.scale.category10();
   var nodes = {};
-  console.log(links);
+ 
   // Compute the distinct nodes from the links.
   links.forEach(function(link) {
       link.gv = +link.gv;
@@ -15,9 +15,9 @@ function drawFDG(){
       link.target = nodes[link.target] || 
           (nodes[link.target] = {name: link.target,genre: link.genre});
   });    
-  console.log(nodes);
+  
   var width = $('#fg').width();
-      console.log(width);
+      
      var height = $('#fg').height();
   var force = d3.layout.force()
       .nodes(d3.values(nodes))
@@ -45,7 +45,7 @@ function drawFDG(){
   //images
       node.append("image")
         .attr("xlink:href",function(d){
-          console.log(d.imageurl);
+         
           if(d.imageurl)
           {
           var ur="artist_images/"+d.imageurl+"";
@@ -70,6 +70,7 @@ function drawFDG(){
   //appending the name
   node.append("text")
       .attr("x", 12)
+      .attr("font-size","30px")
       .attr("dy", ".35em")
       .text(function(d) { return d.name; });
   // add the curvy lines

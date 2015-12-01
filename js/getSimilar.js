@@ -40,7 +40,8 @@ function getSimilarArtistByGenre(Genre)
 
 	while(artistNames.length != 0)
 	{
-		$("#showingRelated .dd-results").append("<li class='related-results'>"+artistNames.pop()+"</li>");
+		$("#u1-showingRelated .dd-results").append("<li class='related-results'>"+artistNames.pop()+"</li>");
+		$("#u2-showingRelated .dd-results").append("<li class='related-results'>"+artistNames.pop()+"</li>");
 		console.log(artistNames.pop());
 	}
 }
@@ -101,7 +102,8 @@ function getGenreByArtist(artist)
 
 	while(genreList.length != 0)
 	{
-		$("#showingRelated .dd-results").append("<li class='related-results'>"+genreList.pop()+"</li>");
+		$("#u1-showingRelated .dd-results").append("<li class='related-results'>"+genreList.pop()+"</li>");
+		$("#u2-showingRelated .dd-results").append("<li class='related-results'>"+genreList.pop()+"</li>");
 		console.log(genreList.pop());
 	}
 }

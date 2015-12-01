@@ -18,7 +18,7 @@
 		<script type="text/javascript" src="js/html2canvas.svg.js"></script>
 	</head>
 	<body>
-		<div class="left-panel">
+		<div class="left-panel" id="user1">
 			<!-- <button class="test">Test Screenshot</button> -->
 			<div class="colorpicker">
 				<div class="icon" id="u1-colorpicker"></div>
@@ -41,11 +41,11 @@
 			</div>
 			<input type="text" class="username" placeholder="Enter your name"/>
 			<div class="filter">
-				<input type="radio" name="initialFilter" value="top10" id="top10" class="filterRadio"/><label for="top10">Top 10 Artists and Genres</label>
-				<input type="radio" name="initialFilter" value="mymix" id="mymix" class="filterRadio"/><label for="mymix">Add items to my Mix</label>
+				<input type="radio" name="u1-initialFilter" value="u1-top10" id="u1-top10" class="filterRadio"/><label for="u1-top10">Top 10 Artists and Genres</label>
+				<input type="radio" name="u1-initialFilter" value="u1-mymix" id="u1-mymix" class="filterRadio"/><label for="u1-mymix">Add items to my Mix</label>
 			</div>
 			<div class="dd-wrapper">
-				<select class="decade-dropdown" id="setDecade">
+				<select class="decade-dropdown" id="u1-setDecade">
 					<option value="decade">Select Decade</option>
 					<option value="1900">1900 - 1910</option>
 					<option value="1910">1910 - 1920</option>
@@ -77,16 +77,16 @@
 					</ul>
 				</div> -->
 			</div>
-			<div class="dd-extension" id="decadeExtension">
-				<div class="delete" id="closeDecade"></div>
+			<div class="dd-extension" id="u1-decadeExtension">
+				<div class="delete" id="u1-closeDecade"></div>
 				<div class="tabs">
-					<div class="tab_single selected" id="topArtists">Top Artists this decade</div>
-					<div class="tab_single" id="topGenres">Top Genres this decade</div>
+					<div class="tab_single selected" id="u1-topArtists">Top Artists this decade</div>
+					<div class="tab_single" id="u1-topGenres">Top Genres this decade</div>
 				</div>
 				<div class="sorting">
 					Sort by: <span class="selected">Alphabetically</span> <span>Hotness</span>
 				</div>
-				<ul class="dd-results top-artists" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+				<ul class="dd-results top-artists u1-top-artists" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
 					<!-- <li>Green Day</li>
 					<li>Savage Garden</li>
 					<li>Walk the Moon</li>
@@ -105,7 +105,7 @@
 					<li>Guns N' Roses</li>
 					<li>Giulia Y Los Tellarini</li> -->
 				</ul>
-				<ul class="dd-results top-genres" style="display: none; height: 250px;" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+				<ul class="dd-results top-genres u1-top-genres" style="display: none; height: 250px;" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
 					<!-- <li>Green Day</li>
 					<li>Savage Garden</li>
 					<li>Walk the Moon</li>
@@ -125,25 +125,25 @@
 					<li>Giulia Y Los Tellarini</li> -->
 				</ul>
 			</div>
-			<div class="search-holder" id="scrollable-dropdown-menu">
-				<button class="add-button">Add to my mix</button>
-				<div class="search-related" id="getRelatedArtist">Artists in this genre</div>
-				<div class="search-related" id="getRelatedGenre">Show genres of this artist</div>
-				<input class="searchbox typeahead" id="my-input" placeholder="Search for Genres"/>
+			<div class="search-holder" id="u1-scrollable-dropdown-menu">
+				<button class="add-button" id="u1-add-button">Add to my mix</button>
+				<div class="search-related" id="u1-getRelatedArtist">Artists in this genre</div>
+				<div class="search-related" id="u1-getRelatedGenre">Show genres of this artist</div>
+				<input class="searchbox typeahead" id="u1-my-input" placeholder="Search for Genres"/>
 			</div>
-			<div class="dd-extension" id="showingRelated">
-				<div class="delete" id="closeRelated"></div>
+			<div class="dd-extension" id="u1-showingRelated">
+				<div class="delete" id="u1-closeRelated"></div>
 				<div class="tabs">
-					<div class="tab_single selected" id="topArtists">Artists belonging to this genre</div>
+					<div class="tab_single selected" id="u1-topArtists">Artists belonging to this genre</div>
 				</div>
-				<ul class="dd-results" id="showingRelatedResults" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+				<ul class="dd-results" id="u1-showingRelatedResults" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
 					<li class="related-results"></li>
 				</ul>
 			</div>
 			<div class="searchFor">
 				<label>Search for:</label>
-				<input type="radio" name="searchFor" id="artist_class" value="artist" class="filterRadio"/><label for="artist_class">Only Artists</label>
-				<input type="radio" name="searchFor" id="genre_class" value="genre" class="filterRadio"/><label for="genre_class">Only Genres</label>
+				<input type="radio" name="searchFor" id="u1-artist_class" value="artist" class="filterRadio"/><label for="u1-artist_class">Only Artists</label>
+				<input type="radio" name="searchFor" id="u1-genre_class" value="genre" class="filterRadio"/><label for="u1-genre_class">Only Genres</label>
 			</div>
 			<div class="mymix">
 				<div class="title">My mix</div>
@@ -191,7 +191,162 @@
 				<div class="fdg-inner" id="fg"></div>
 			</div>
 		</div>
-		<div class="right-panel"></div>
+		<div class="left-panel right-panel" id="user2">
+			<!-- <button class="test">Test Screenshot</button> -->
+			<div class="colorpicker">
+				<div class="icon" id="u2-colorpicker"></div>
+				<ul class="dropdown" id="u2-colorpicker-dd" style="display:none;">
+					<li style="background: #27ae60"></li>
+					<li style="background: #2ecc71"></li>
+					<li style="background: #3498db"></li>
+					<li style="background: #2980b9"></li>
+					<li style="background: #9b59b6"></li>
+					<li style="background: #8e44ad"></li>
+					<li style="background: #34495e"></li>
+					<li style="background: #2c3e50"></li>
+					<li style="background: #1abc9c"></li>
+					<li style="background: #16a085"></li>
+					<li style="background: #e67e22"></li>
+					<li style="background: #d35400"></li>
+					<li style="background: #e74c3c"></li>
+					<li style="background: #c0392b"></li>
+				</ul>
+			</div>
+			<input type="text" class="username" placeholder="Enter your name"/>
+			<div class="filter">
+				<input type="radio" name="u2-initialFilter" value="u2-top10" id="u2-top10" class="filterRadio"/><label for="u2-top10">Top 10 Artists and Genres</label>
+				<input type="radio" name="u2-initialFilter" value="u2-mymix" id="u2-mymix" class="filterRadio"/><label for="u2-mymix">Add items to my Mix</label>
+			</div>
+			<div class="dd-wrapper">
+				<select class="decade-dropdown setDecade" id="u2-setDecade">
+					<option value="decade">Select Decade</option>
+					<option value="1900">1900 - 1910</option>
+					<option value="1910">1910 - 1920</option>
+					<option value="1920">1920 - 1930</option>
+					<option value="1930">1930 - 1940</option>
+					<option value="1940">1940 - 1950</option>
+					<option value="1950">1950 - 1960</option>
+					<option value="1960">1960 - 1970</option>
+					<option value="1970">1970 - 1980</option>
+					<option value="1980">1980 - 1990</option>
+					<option value="1990">1990 - 2000</option>
+					<option value="2000">2000 - 2010</option>
+				</select>
+				<!-- <div id="dd" class="decade-dropdown" tabindex="1">
+					<span id="setDecade">Select Decade</span>
+					<ul class="dropdown">
+						<li><a href="#"><i class=""></i>Select Decade</a></li>
+						<li><a href="#"><i class=""></i>1900 - 1910</a></li>
+						<li><a href="#"><i class=""></i>1910 - 1920</a></li>
+						<li><a href="#"><i class=""></i>1920 - 1930</a></li>
+						<li><a href="#"><i class=""></i>1930 - 1940</a></li>
+						<li><a href="#"><i class=""></i>1940 - 1950</a></li>
+						<li><a href="#"><i class=""></i>1950 - 1960</a></li>
+						<li><a href="#"><i class=""></i>1960 - 1970</a></li>
+						<li><a href="#"><i class=""></i>1970 - 1980</a></li>
+						<li><a href="#"><i class=""></i>1980 - 1990</a></li>
+						<li><a href="#"><i class=""></i>1990 - 2000</a></li>
+						<li><a href="#"><i class=""></i>2000 - 2010</a></li>
+					</ul>
+				</div> -->
+			</div>
+			<div class="dd-extension" id="u2-decadeExtension">
+				<div class="delete" id="u2-closeDecade"></div>
+				<div class="tabs">
+					<div class="tab_single selected" id="u2-topArtists">Top Artists this decade</div>
+					<div class="tab_single" id="u2-topGenres">Top Genres this decade</div>
+				</div>
+				<div class="sorting">
+					Sort by: <span class="selected">Alphabetically</span> <span>Hotness</span>
+				</div>
+				<ul class="dd-results top-artists u2-top-artists" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+					<!-- <li>Green Day</li>
+					<li>Savage Garden</li>
+					<li>Walk the Moon</li>
+					<li>OMI</li>
+					<li>Justin Bieber</li>
+					<li>Selena Gomez</li>
+					<li>Flo Rida</li>
+					<li>Kelly Clarkson</li>
+					<li>Beyonce</li>
+					<li>Ed Sheeran</li>
+					<li>Maroon 5</li>
+					<li>Bruno Mars</li>
+					<li>AR Rahman</li>
+					<li>Gipsy Kings</li>
+					<li>Sixpence None the Richer</li>
+					<li>Guns N' Roses</li>
+					<li>Giulia Y Los Tellarini</li> -->
+				</ul>
+				<ul class="dd-results top-genres u2-top-genres" style="display: none; height: 250px;" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+					<!-- <li>Green Day</li>
+					<li>Savage Garden</li>
+					<li>Walk the Moon</li>
+					<li>OMI</li>
+					<li>Justin Bieber</li>
+					<li>Selena Gomez</li>
+					<li>Flo Rida</li>
+					<li>Kelly Clarkson</li>
+					<li>Beyonce</li>
+					<li>Ed Sheeran</li>
+					<li>Maroon 5</li>
+					<li>Bruno Mars</li>
+					<li>AR Rahman</li>
+					<li>Gipsy Kings</li>
+					<li>Sixpence None the Richer</li>
+					<li>Guns N' Roses</li>
+					<li>Giulia Y Los Tellarini</li> -->
+				</ul>
+			</div>
+			<div class="search-holder" id="u2-scrollable-dropdown-menu">
+				<button class="add-button" id="u2-add-button">Add to my mix</button>
+				<div class="search-related" id="u2-getRelatedArtist">Artists in this genre</div>
+				<div class="search-related" id="u2-getRelatedGenre">Show genres of this artist</div>
+				<input class="searchbox typeahead" id="u2-my-input" placeholder="Search for Genres"/>
+			</div>
+			<div class="dd-extension" id="u2-showingRelated">
+				<div class="delete" id="u2-closeRelated"></div>
+				<div class="tabs">
+					<div class="tab_single selected" id="u2-topArtists">Artists belonging to this genre</div>
+				</div>
+				<ul class="dd-results" id="u2-showingRelatedResults" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+					<li class="related-results"></li>
+				</ul>
+			</div>
+			<div class="searchFor">
+				<label>Search for:</label>
+				<input type="radio" name="searchFor" id="u2-artist_class" value="artist" class="filterRadio"/><label for="u2-artist_class">Only Artists</label>
+				<input type="radio" name="searchFor" id="u2-genre_class" value="genre" class="filterRadio"/><label for="u2-genre_class">Only Genres</label>
+			</div>
+			<div class="mymix">
+				<div class="title">My mix</div>
+				<ul class="mix-list" onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';">
+
+				</ul>
+			</div>
+			<div class="artist-bottom">
+				<div class="artist-image">
+					<img src="http://4.bp.blogspot.com/-3LuvWzOsW1E/Tt5n_O4QqGI/AAAAAAAAAEc/Zx7x20kOv30/s200/BrunoMarssongPics1D0iM6oDySm9IPM.jpg">
+				</div>
+				<div class="artist-name">Bruno Mars</div>
+				<div class="genres">
+					<span class="genre">Genre(s):</span>
+					<ul class="artist-genre">
+						<!-- <li>Reggae</li>
+						<li>Rock</li>
+						<li>Hip hop</li>
+						<li>R&B</li> -->
+					</ul>
+				</div>
+				<div class="ratings">
+					<span class="rating">Rating:</span>
+					<ul class="artist-rating">
+						
+					</ul>
+				</div>
+				<div></div>
+			</div>
+		</div>
 		<div class="overlay" style="display: none;"></div>
 		<div class="artist-popup" style="display: none;">
 			<img src="http://brunomars.us/wp-content/uploads/2014/09/Bruno-Mars-Curly-Hair.jpg">
@@ -248,6 +403,10 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="js/top10artistsscript.js"></script>
+		<script type="text/javascript" src="js/createGenreTimeline.js"></script>
+		<script type="text/javascript" src="js/getArtistDataForTimeline.js"></script>
+		<script type="text/javascript" src="js/getBAFDG.js"></script>
+		<script type="text/javascript" src="js/getDataForFdg.js"></script>
 		<script type="text/javascript" src="js/getGenresForC.js"></script>
 		<script type="text/javascript" src="js/getgenreforAB.js"></script>
 		<script type="text/javascript" src="js/ui.js"></script>
@@ -280,395 +439,6 @@ text {
 
 </style>
 <script type="text/javascript" src="js/drawFDG-C.js"></script>
-<script>
-var colorrange = [];
-    
-    
-function cchart(csvpath,color) {
-d3.select("#chart").selectAll("*").remove();
-d3.select("#body").selectAll("p").remove();  
-if (color == "blue") {
-  colorrange = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
-}
-else if (color == "pink") {
-  colorrange = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
-}
-else if (color == "orange") {
-  colorrange = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
-}
-strokecolor = colorrange[0];
-
-var format = d3.time.format("%Y");
-
-var margin = {top: 20, right: 40, bottom: 30, left: 30};
-var width = 5464 - margin.left - margin.right;
-var height = 1000 - margin.top - margin.bottom;
-
-var tooltip = d3.select("#chart")
-    .append("div")
-    .attr("class", "remove")
-    .style("position", "absolute")
-    .style("z-index", "20")
-    .style("visibility", "hidden")
-    .style("top", "30px")
-    .style("left", "55px");
-
-var x = d3.time.scale()
-    .range([0, width]);
-
-var y = d3.scale.linear()
-    .range([height-10, 0]);
-
-var z = d3.scale.ordinal()
-    .range(colorrange);
-
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-    .ticks(10);
-
-var yAxis = d3.svg.axis()
-    .scale(y);
-
-var yAxisr = d3.svg.axis()
-    .scale(y);
-
-var stack = d3.layout.stack()
-    .offset("silhouette")
-    .values(function(d,i) { 
-        console.log(d.values[i]);
-        return d.values;})
-    .x(function(d) { return d.year; })
-    .y(function(d) { return d.score; });
-
-var nest = d3.nest()
-    .key(function(d) { 
-        console.log(d.genre);
-        return d.genre; });
-
-var area = d3.svg.area()
-    .interpolate("cardinal")
-    .x(function(d) { return x(d.year); })
-    .y0(function(d) { return y(d.y0); })
-    .y1(function(d) { return y(d.y0 + d.y); });
-
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
-console.log(csvpath);         
-  csvpath.forEach(function(d) {
-    d.year = format.parse(String(d.year));
-    d.score = +d.score/6;
-  });  
-console.log(csvpath);
-  function sortByKey(array, key) {
-return array.sort(function(a, b) {
-    var x = a[key]; var y = b[key];
-    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-});
-}
-
-csvpath = sortByKey(csvpath, 'year');   
-    console.log(csvpath);
-var layers = stack(nest.entries(csvpath));   
-  console.log(layers);
-  x.domain(d3.extent(csvpath, function(d) { return d.year; }));
-  y.domain([0, d3.max(csvpath, function(d) { return d.y0 + d.y; })]);
-
-  svg.selectAll(".layer")
-      .data(layers)
-    .enter().append("path")
-      .attr("class", "layer")
-      .attr("d", function(d) { return area(d.values); })
-      .style("fill", function(d, i) { return z(i); });
-
-
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-
-//  svg.append("g")
-//      .attr("class", "y axis")
-//      .attr("transform", "translate(" + width + ", 0)")
-//      .call(yAxis.orient("right"));
-//
-//  svg.append("g")
-//      .attr("class", "y axis")
-//      .call(yAxis.orient("left"));
-
-  svg.selectAll(".layer")
-    .attr("opacity", 1)
-    .on("mouseover", function(d, i) {
-      svg.selectAll(".layer").transition()
-      .duration(250)
-      .attr("opacity", function(d, j) {
-        return j != i ? 0.6 : 1;
-    })})
-
-    .on("mousemove", function(d, i) {
-      mousex = d3.mouse(this);
-      mousex = mousex[0];
-
-      d3.select(this)
-      .classed("hover", true)
-      .attr("stroke", strokecolor)
-      .attr("stroke-width", "0.5px"), 
-      tooltip.html( "<p>" + d.key + "</p>" ).style("visibility", "visible");
-      
-    })
-    .on("mouseout", function(d, i) {
-     svg.selectAll(".layer")
-      .transition()
-      .duration(250)
-      .attr("opacity", "1");
-      d3.select(this)
-      .classed("hover", false)
-      .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "</p>" ).style("visibility", "hidden");
-  })
-    
-  var vertical = d3.select("#chart")
-        .append("div")
-        .attr("class", "remove")
-        .style("position", "absolute")
-        .style("z-index", "19")
-        .style("width", "1px")
-        .style("height", "380px")
-        .style("top", "10px")
-        .style("bottom", "30px")
-        .style("left", "0px")
-        .style("background", "#fff");
-
-  d3.select("#chart")
-      .on("mousemove", function(){  
-         mousex = d3.mouse(this);
-         mousex = mousex[0] + 5;
-         vertical.style("left", mousex + "px" )})
-      .on("mouseover", function(){  
-         mousex = d3.mouse(this);
-         mousex = mousex[0] + 5;
-         vertical.style("left", mousex + "px")});
-}
-</script>    
-<script>
-var colorrange2 = [];
-var genretodraw=[];
-//using a global object    
-function chartinit(mainobj2,color)
-{
-    console.log(genretodraw);
-    for(i=0;i<12;i++)
-    {
-    var temp1 = {};
-    temp1.year = mainobj2[i].year;
-    temp1.genre = mainobj2[i].genre;
-    temp1.user = mainobj2[i].user;
-    temp1.score = mainobj2[i].score;        
-    genretodraw.push(temp1);
-    }
-    var clonegenre=clone(genretodraw);
-    chart(clonegenre,color);
-}
-    //cloning the object for reference
-function clone(obj){
-   if(obj == null || typeof(obj) != 'object')
-       return obj;
-
-   var temp = new obj.constructor(); 
-   for(var key in obj)
-       temp[key] = clone(obj[key]);
-
-   return temp;
-}
-    //function to remove the genre from timeline
-function toRemoveGenreFromTimeline(genre,color)
-{
-    var updatedList=[];
-	for(i=0;i<genretodraw.length;i++)
-	{
-		if (genretodraw[i].genre != genre)
-		{
-            updatedList.push(genretodraw[i]);
-            
-//			var tempToReplace = genretodraw[genretodraw.length-1];
-//			genretodraw[genretodraw.length-1] = genretodraw[i];
-//			genretodraw[i] = tempToReplace;
-        }
-	}
-    genretodraw=[];
-    genretodraw=updatedList;
-    var clonegenre=clone(genretodraw);
-    chart(clonegenre,color);
-    console.log(genretodraw);
-	
-}    
- 
-///function to draw the chart    
-function chart(csvpath,color) {
-d3.select("#chart").selectAll("*").remove();    
-// d3.select("#body").selectAll("p").remove();  
-if (color == "blue") {
-  colorrange2 = ["#045A8D", "#2B8CBE", "#74A9CF", "#A6BDDB", "#D0D1E6", "#F1EEF6"];
-}
-else if (color == "pink") {
-  colorrange2 = ["#980043", "#DD1C77", "#DF65B0", "#C994C7", "#D4B9DA", "#F1EEF6"];
-}
-else if (color == "orange") {
-  colorrange2 = ["#B30000", "#E34A33", "#FC8D59", "#FDBB84", "#FDD49E", "#FEF0D9"];
-}
-strokecolor = colorrange[0];
-
-var format = d3.time.format("%Y");
-
-var margin = {top: 20, right: 40, bottom: 30, left: 30};
-var width = 5464 - margin.left - margin.right;
-var height = 1000 - margin.top - margin.bottom;
-
-var tooltip = d3.select("#chart")
-    .append("div")
-    .attr("class", "remove")
-    .style("position", "absolute")
-    .style("z-index", "20")
-    .style("visibility", "hidden")
-    .style("top", "30px")
-    .style("left", "55px");
-
-var x = d3.time.scale()
-    .range([0, width]);
-
-var y = d3.scale.linear()
-    .range([height-10, 0]);
-
-var z = d3.scale.ordinal()
-    .range(colorrange);
-//Axes initialization
-var xAxis = d3.svg.axis()
-    .scale(x)
-    .orient("bottom")
-    .ticks(10);
-
-var yAxis = d3.svg.axis()
-    .scale(y);
-
-var yAxisr = d3.svg.axis()
-    .scale(y);
-
-var stack = d3.layout.stack()
-    .offset("silhouette")
-    .values(function(d) { 
-        //console.log(d.values);
-        return d.values;})
-    .x(function(d) { return d.year; })
-    .y(function(d) { return d.score; });
-//nesting the keys accordingly here gentres
-var nest = d3.nest()
-    .key(function(d) { return d.genre; });
-//calculating the area
-var area = d3.svg.area()
-    .interpolate("cardinal")
-    .x(function(d) { return x(d.year); })
-    .y0(function(d) { return y(d.y0); })
-    .y1(function(d) { return y(d.y0 + d.y); });
-
-var svg = d3.select("#chart").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-    
-console.log(csvpath);         
-  csvpath.forEach(function(d) {
-    d.year = format.parse(String(d.year));
-    d.score = +d.score/100;
-  });  
-console.log(csvpath);
-// function to sort by the keys- year    
-  function sortByKey(array, key) {
-return array.sort(function(a, b) {
-    var x = a[key]; var y = b[key];
-    return ((x < y) ? -1 : ((x > y) ? 1 : 0));
-});
-}
-csvpath = sortByKey(csvpath, 'year'); 
-// creating the layers    
-var layers = stack(nest.entries(csvpath));   
-  console.log(layers);
-  x.domain(d3.extent(csvpath, function(d) { return d.year; }));
-  y.domain([0, d3.max(csvpath, function(d) { return d.y0 + d.y; })]);
-//appending the layer
-  svg.selectAll(".layer")
-      .data(layers)
-      .enter().append("path")
-      .attr("class",function(d,i){console.log(d.values[i].user);
-      if(d.values[i].user==1)
-                                    return "layer1";
-                               else
-                                   return "layer2";})
-      .attr("id",function(d,i) { return d.values[i].user; })
-      .attr("d", function(d) { return area(d.values); })
-      .style("fill", function(d, i) { return z(i); });
-//appending the x axis
-  svg.append("g")
-      .attr("class", "x axis")
-      .attr("transform", "translate(0," + height + ")")
-      .call(xAxis);
-// functions to display the name when hovered     
-  svg.selectAll(".layer")
-    .attr("opacity", 1)
-    .on("mouseover", function(d, i) {
-      svg.selectAll(".layer").transition()
-      .duration(250)
-      .attr("opacity", function(d, j) {
-        return j != i ? 0.6 : 1;
-    })})
-
-    .on("mousemove", function(d, i) {
-      mousex = d3.mouse(this);
-      mousex = mousex[0];
-
-      d3.select(this)
-      .classed("hover", true)
-      .attr("stroke", strokecolor)
-      .attr("stroke-width", "0.5px"), 
-      tooltip.html( "<p>" + d.key + "</p>" ).style("visibility", "visible");
-      
-    })
-    .on("mouseout", function(d, i) {
-     svg.selectAll(".layer")
-      .transition()
-      .duration(250)
-      .attr("opacity", "1");
-      d3.select(this)
-      .classed("hover", false)
-      .attr("stroke-width", "0px"), tooltip.html( "<p>" + d.key + "</p>" ).style("visibility", "hidden");
-  })
-    
-  var vertical = d3.select("#chart")
-        .append("div")
-        .attr("class", "remove")
-        .style("position", "absolute")
-        .style("z-index", "19")
-        .style("width", "1px")
-        .style("height", "380px")
-        .style("top", "10px")
-        .style("bottom", "30px")
-        .style("left", "0px")
-        .style("background", "#fff");
-
-  d3.select("#chart")
-      .on("mousemove", function(){  
-         mousex = d3.mouse(this);
-         mousex = mousex[0] + 5;
-         vertical.style("left", mousex + "px" )})
-      .on("mouseover", function(){  
-         mousex = d3.mouse(this);
-         mousex = mousex[0] + 5;
-         vertical.style("left", mousex + "px")});
-}
-</script>  
 <style>
 
 body {

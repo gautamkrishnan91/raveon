@@ -1,8 +1,8 @@
 
-var map = L.map('map').setView([38.8833,-97.0167], 6);  
+var map = L.map('map').setView([40.8833,-10], 4);  
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
             maxZoom: 18,
-            id: 'mapbox.dark',
+            id: 'mapbox.light',
            continuousWorld: 'true',
            noWrap: 'true',
            color: 'Green',
@@ -23,7 +23,7 @@ var map = L.map('map').setView([38.8833,-97.0167], 6);
 	var artistListOnMap = [];
 	var markerList = [];
 
-function putArtistOnMap(artistName)
+function putArtistOnMap(artistName, user)
 {	var url = "http://developer.echonest.com/api/v4/artist/search?api_key=ZVJ0VUVPOV3DDMWA2&format=json&name="+artistName+"&bucket=hotttnesss&bucket=images&bucket=genre&bucket=urls&bucket=familiarity&bucket=artist_location&bucket=years_active&results=1";
 	$.ajax({
 	url : url,
@@ -152,11 +152,18 @@ function putArtistOnMap(artistName)
 	            		{
 	            			locationOnMap = data.features[0].center;
 							//Divicon is used to enable dynamic styling to the icons in case of highlighting.
+							var markerClass;
+							if(user==1){
+								markerClass = "mapmarker1";
+							}
+							else if(user==2){
+								markerClass = "mapmarker2";
+							}
 							var myIcon = L.divIcon({
-        						iconSize: [20,10],
+        						iconSize: [40,40],
 						        iconAnchor: [19, 37],
 						       //Styling needed here.
-						        html : "<span id="+artistOnMapId+" name = "+artistOnMapName+"> <img src = '"+artistOnMapImage+"' width = '20' height = '20'></span>"
+						        html : "<span id="+artistOnMapId+" name = "+artistOnMapName+"> <img src = '"+artistOnMapImage+"' width = '40' height = '40' class='"+markerClass+"'style='border-radius: 50%'></span>"
 						         });
 							console.log(myIcon);
 							if (artistOnMapLocation == "Unknown")
@@ -223,22 +230,34 @@ function putArtistOnMap(artistName)
 function removeArtistFromMap(artistNameToRemove)
 {
 	// alert(artistNameToRemove);
-    for(i=0;i<artistListOnMap.length;i++)
+    for(w=0;w<artistListOnMap.length;w++)
 	{
-		if(artistListOnMap[i] == artistNameToRemove)
+		if(artistListOnMap[w] == artistNameToRemove)
 		{
-			markerLayer.removeLayer(markerList[i]);
+			
+						if( w == (artistListOnMap.length -1))
+			{
+			console.log(artistNameToRemove,artistListOnMap[w],w,artistListOnMap.length-1);	
+				markerLayer.removeLayer(markerList[w]);
+					artistListOnMap.pop();	
+				markerList.pop();
+				break;
+			}
+			else
+			{	
+			markerLayer.removeLayer(markerList[w]);
 			var tempArtist = artistListOnMap[artistListOnMap.length-1];
-			artistListOnMap[artistListOnMap.length-1]=artistListOnMap[i];
-			artistListOnMap[i]=tempArtist;
+			artistListOnMap[artistListOnMap.length-1]=artistListOnMap[w];
+			artistListOnMap[w]=tempArtist;
 			artistListOnMap.pop();
 			var tempMarker = markerList[markerList.length-1];
-			markerList[markerList.length-1]=markerList[i];
-			markerList[i]=tempMarker;
+			markerList[markerList.length-1]=markerList[w];
+			markerList[w]=tempMarker;
 			markerList.pop();
 			console.log(markerList);
 			console.log(artistListOnMap);
 			break;
+			}
 		}
 	}
 }

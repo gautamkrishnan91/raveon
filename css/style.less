@@ -674,8 +674,8 @@ body{
 .right-panel{
 	background: 
 	linear-gradient(
-      rgba(41, 128, 185, 0.88), 
-      rgba(41, 128, 185, 0.88)
+      fadeout(@primarycolor2, 10%), 
+      fadeout(@primarycolor2, 10%)
     ),
 	url('../images/guitar.jpg');
 	background-repeat: no-repeat;
@@ -689,6 +689,46 @@ body{
 	height: 100vh;
 	min-width: 250px;
 	.right;
+
+	.add-button{
+		background: @primarycolor2 !important;
+	}
+	.search-related{
+		color: @primarycolor2 !important;
+	}
+	.tab_single{
+		&.selected:after{
+			background: @primarycolor2;
+		}
+	}
+	.sorting{
+		span{
+			&.selected:after{
+				background: @primarycolor2;
+			}
+		}
+	}
+	.dd-results{
+		li{
+			color: desaturate(@primarycolor2, 30%);
+		}
+	}
+	.mymix{
+		.title{
+			color: desaturate(@primarycolor2, 30%);
+		}
+		.mix-list{
+			li{
+				color: desaturate(@primarycolor2, 30%);
+				&:hover{ 
+					 background: lighten(@primarycolor2, 45%);
+				}
+			}
+		}
+	}
+	.artist-bottom{
+		border-top: 1px solid desaturate(@primarycolor2, 30%); background: 	desaturate(@primarycolor2, 10%);
+	}
 }
 /* Sidebar */
 
@@ -702,7 +742,7 @@ body{
 .leaflet-popup-content img {
   max-width:100%;
   }
-  #scrollable-dropdown-menu .tt-dropdown-menu {
+.tt-dropdown-menu {
   max-height: 150px;
   overflow-y: auto;
 }
@@ -927,10 +967,48 @@ body{
 	border-radius: 50%;
 }
 .timeline-switch{
-	top: 20px;
-    right: 230px;
-    z-index: 100;
-    font-size: 20px;
+	width: 600px;
     position: absolute;
+    left: 50%;
+    margin-left: -300px;
+	top: 20px;
+    z-index: 100;
+    font-size: 28px;
     cursor: pointer;
+
+    #artist-timeline{
+    	.left;
+    }
+    #genre-timeline{
+    	.right;
+    }
+}
+.leaflet-div-icon {
+    background: transparent !important;
+    border: 0 !important;
+}
+.leaflet-marker-icon img{
+	border-radius: 50%;
+	border: 5px solid gold;
+}
+.mapmarker1{
+	border: 5px solid @primarycolor1 !important;	
+}
+.mapmarker2{
+	border: 5px solid @primarycolor2 !important;	
+}
+.layer1{
+	fill: @primarycolor1 !important;
+}
+.layer2{
+	fill: @primarycolor2 !important;
+}
+.node1 text{
+	fill: @primarycolor1;
+}
+.node2 text{
+	fill: @primarycolor2;
+}
+.fdg text{
+	font-size: 30px !important;
 }
