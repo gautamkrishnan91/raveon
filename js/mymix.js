@@ -87,11 +87,12 @@ function addTopArtistFromGenre(artistsData,user)
 						
 							
 
+						    var valueuser = "user"+user;
 						    var value = artistsData.response.artists[i].name;
 						    var type = "artist";
 						    
 						   
-						        $(".mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
+						        $("#"+valueuser+" .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
 						        $("#my-input").val("");
 						        $("#my-input").focus();
 						   
@@ -139,7 +140,7 @@ function buildGlobalMyMix(artist_data,mymix_name,user,mymixtype,status)
 	{
 		var fdgArtist=[];
 		var artist_user;
-		putArtistOnMap(mymix_name);
+		putArtistOnMap(mymix_name,user);
 		for(i=0;i<globalMyMix.length;i++)
 		{
 			console.log(globalMyMix);
@@ -166,7 +167,7 @@ function buildGlobalMyMix(artist_data,mymix_name,user,mymixtype,status)
 
 }
 
-function myMixDelete(mymix_name)
+function myMixDelete(mymix_name,user)
 {
 	var fdgArtist=[];
 	var artist_user;
@@ -198,22 +199,30 @@ function myMixDelete(mymix_name)
 	globalMyMix.splice(removeAt,1);
 	var fdgArtist=[];
 		var artist_user;
-		putArtistOnMap(mymix_name,user);
-		for(ik=0;ik<globalMyMix.length;ik++)
+		if (globalMyMix.length != 0)
 		{
-			console.log(globalMyMix);
-			if(globalMyMix[ik].type=="artist")
+			for(ik=0;ik<globalMyMix.length;ik++)
 			{
-				// artist_user.artist=globalMyMix[i].name;
-				// artist_user.user=globalMyMix[i].user;
-				 artist_user={"artist":globalMyMix[ik].name,"user":globalMyMix[ik].user};
-				 fdgArtist.push(artist_user);
-				 artist_user=null;
+				console.log(globalMyMix);
+				if(globalMyMix[ik].type=="artist")
+				{
+					// artist_user.artist=globalMyMix[i].name;
+					// artist_user.user=globalMyMix[i].user;
+					 artist_user={"artist":globalMyMix[ik].name,"user":globalMyMix[ik].user};
+					 fdgArtist.push(artist_user);
+					 artist_user=null;
+				}
+			}
+			console.log(fdgArtist);
+			if (fdgArtist.length > 0)
+			{
+				getDataForFdg(fdgArtist);
 			}
 		}
-		console.log(fdgArtist);
-		getDataForFdg(fdgArtist);
-	
+		else if (globalMyMix.length == 0)
+		{
+			;
+		}
 }
 
 function myMixHighlight()

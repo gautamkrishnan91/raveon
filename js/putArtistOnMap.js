@@ -98,8 +98,8 @@ function putArtistOnMap(artistName, user)
 						{
 							if (imageResult.images.length > 0)
 							{
-								if (imageResult.images[3])
-								artistOnMapImage = imageResult.images[3].url;
+								if (imageResult.images[0])
+								artistOnMapImage = imageResult.images[0].url;
 								else
 								artistOnMapImage = "http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Dj-icon.png";	
 							}
@@ -265,11 +265,16 @@ function removeArtistFromMap(artistNameToRemove)
 //Zoom into the given artist.
 function zoomToArtist(artistToZoom)
 {
+	// alert("To highlight "+artistToZoom);
 	for(i=0;i<artistListOnMap.length;i++)
 	{
 		if(artistListOnMap[i] == artistToZoom)
 		{
-			map.setView(markerList[i]._latlng);
+			if(markerList[i]._latlng)
+			{
+				map.setView(markerList[i]._latlng);
+				markerList[i].openPopup();
+			}
 		}
 	}
 }

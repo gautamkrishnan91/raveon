@@ -247,7 +247,7 @@ $("#u2-getRelatedArtist").click(function(){
 $("#u1-add-button").click(function(){
 
 	var value = $("#u1-my-input").val();
-	var type = $("#user1 input[name='searchFor']:checked").val();
+	var type = $("#user1 input[name='searchFor1']:checked").val();
 	var returned = mymixappend(value,1,buildGlobalMyMix,type);
 	if (returned == true){
 		$("#user1 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
@@ -263,7 +263,8 @@ $("#u1-add-button").click(function(){
 $("#u2-add-button").click(function(){
 
 	var value = $("#u2-my-input").val();
-	var type = $("#user2 input[name='searchFor']:checked").val();
+	alert( $("#user2 input[name='searchFor2']:checked").val());
+	var type = $("#user2 input[name='searchFor2']:checked").val();
 	var returned = mymixappend(value,2,buildGlobalMyMix,type);
 	if (returned == true){
 		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
@@ -280,50 +281,69 @@ $("#u2-add-button").click(function(){
 $("#u1-showingRelatedResults").on('click', 'li', function () {
     var value = $(this).html();
 	if (value != ""){
-		if($("#user1 input[name='searchFor']:checked").val()=="genre"){
+		if($("#user1 input[name='searchFor1']:checked").val()=="genre"){
 			var type = "artist";
 		}
 		else{
 			var type = "genre";
 		}
+	
+	var returned = mymixappend(value,1,buildGlobalMyMix,type);
+	if (returned == true){
 		$("#user1 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
 		$("#u1-my-input").val("");
 	}
+}
 });
 $("#u2-showingRelatedResults").on('click', 'li', function () {
     var value = $(this).html();
 	if (value != ""){
-		if($("#user2 input[name='searchFor']:checked").val()=="genre"){
+		if($("#user2 input[name='searchFor2']:checked").val()=="genre"){
 			var type = "artist";
 		}
 		else{
 			var type = "genre";
 		}
+		var returned = mymixappend(value,2,buildGlobalMyMix,type);
+	if (returned == true){
 		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>("+type+")</span><div class='delete'></div></li>");
 		$("#u2-my-input").val("");
 	}
+}
 });
 // Adding from decade list
 $("#user1 .top-artists").on('click', 'li', function () {
     var value = $(this).html();
+   	var type = "artist";
+	var returned = mymixappend(value,1,buildGlobalMyMix,type);
+	if (returned == true){
 	if (value != ""){
 		$(".mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(artist)</span><div class='delete'></div></li>");
 		$("#u1-my-input").val("");
 	}
+}
 });
 $("#user1 .top-genres").on('click', 'li', function () {
-    var value = $(this).html();
+    var value = $(this).html();    
+	var type = "genre";
+	var returned = mymixappend(value,1,buildGlobalMyMix,type);
+	if (returned == true){
 	if (value != ""){
 		$("#user1 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(genre)</span><div class='delete'></div></li>");
 		$("#u1-my-input").val("");
+		}
 	}
 });
 $("#user2 .top-artists").on('click', 'li', function () {
     var value = $(this).html();
+    var type = "artist";
+	var returned = mymixappend(value,2,buildGlobalMyMix,type);
+	if (returned == true){
 	if (value != ""){
 		$("#user2 .mix-list").append("<li><input type='checkbox' class='checkbox' checked><a>"+value+"</a>&nbsp;<span>(artist)</span><div class='delete'></div></li>");
 		$("#u2-my-input").val("");
 	}
+}
 });
 $("#user2 .top-genres").on('click', 'li', function () {
     var value = $(this).html();
@@ -345,6 +365,7 @@ $("#user1 .mix-list").on('click', 'li', function () {
 	if($(this).find("span").html()=="(artist)"){
 		var value = $(this).find("a").html();
 		$("#user1 .artist-genre").html("");
+		zoomToArtist(value);
 		getDataForPopup(value);
 	}
 });
@@ -352,6 +373,7 @@ $("#user2 .mix-list").on('click', 'li', function () {
 	if($(this).find("span").html()=="(artist)"){
 		var value = $(this).find("a").html();
 		$("#user2 .artist-genre").html("");
+		zoomToArtist(value);
 		getDataForPopup(value);
 	}
 });
@@ -359,9 +381,14 @@ $(".artist-bottom .artist-name").click(function(){
 	$(".overlay").show();
 	$(".artist-popup").show();
 });
-$(".mix-list").on('click', '.delete', function () {
+$("#user2 .mix-list").on('click', '.delete', function () {
 	var val = $(this).siblings("a").html();
-	myMixDelete(val);
+	myMixDelete(val,2);
+	$(this).parent("li").remove();
+});
+$("#user1 .mix-list").on('click', '.delete', function () {
+	var val = $(this).siblings("a").html();
+	myMixDelete(val,1);
 	$(this).parent("li").remove();
 });
 

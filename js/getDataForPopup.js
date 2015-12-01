@@ -65,8 +65,12 @@ function getDataForPopup(artistName)
 						{
 							if (imageResult.images.length > 0)
 							{
-								// console.log(imageResult.images[0].url);
+								if (imageResult.images[0])
 								artistPopupImage = imageResult.images[0].url;
+								else
+								artistPopupImage = "http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Dj-icon.png";	
+								// console.log(imageResult.images[0].url);
+								//artistPopupImage = imageResult.images[0].url;
 							}
 							else
 							{	

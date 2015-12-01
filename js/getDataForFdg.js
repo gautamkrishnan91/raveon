@@ -16,8 +16,8 @@ function getDataForFdg(preArtistListForFdg)
 					if(imageFdgResult)
 					{
 						if (imageFdgResult.images.length > 0)
-						{if (imageFdgResult.images[3])
-								artistImagesFdg.push(imageFdgResult.images[3].url);
+						{if (imageFdgResult.images[0])
+								artistImagesFdg.push(imageFdgResult.images[0].url);
 								else
 								artistImagesFdg.push("http://icons.iconarchive.com/icons/icons8/windows-8/512/Music-Dj-icon.png");
 							
@@ -53,7 +53,17 @@ function getDataForFdg(preArtistListForFdg)
 						async: false,
 						success :  function(genreData)
 						{
-							genreOfArtist.push(genreData.response.artists[0].genres[0].name);
+							console.log(genreData.response.artists[0]);
+							console.log(genreData.response.artists[0].genres);
+							if(genreData.response.artists[0].genres.length == 0)
+							{
+								genreOfArtist.push("Unknown");
+							}
+							else
+							{
+								console.log(genreData.response.artists[0].genres[0]);
+								genreOfArtist.push(genreData.response.artists[0].genres[0].name);
+							}
 						}
 				})	
 				
