@@ -1,6 +1,6 @@
 var genersTop10=[];
            
-function computeTopTen(top100)
+function computeTopTen(top100) // This function copmutes top 10 for each year taking into account the top 100 artists for that year
 {
     var genreObj=[];
     var placeHolder;
@@ -16,7 +16,7 @@ function computeTopTen(top100)
                 genresList.push(top100[i].genres[j].name)
                 placeHolder={genres:top100[i].genres[j].name,hitcount:1,familiarity:top100[i].familiarity,hotttnesss:top100[i].hotttnesss};
                 genreObj.push(placeHolder);
-                    //console.log("Has not : "+ top100[i].genres[j])
+                    
             }
             else
             {
@@ -64,7 +64,7 @@ function findTop10()
                 familiarityarr.push(genersTop10[i][j].familiarity);
                 hotttnesssarr.push(genersTop10[i][j].hotttnesss);
                                
-                    //console.log("Has not : "+ top100[i].genres[j])
+                
             }
             else
             {
@@ -72,13 +72,13 @@ function findTop10()
                 hitcountarr[genresIndex]+=genersTop10[i][j].hitcount;
                 familiarityarr[genresIndex]+=genersTop10[i][j].familiarity;
                 hotttnesssarr[genresIndex]+=genersTop10[i][j].hotttnesss;
-                //console.log(genresIndex);
+                
             }
         }
 
         for(i=0;i<20;i++)
         {
-            var max = Math.max.apply(Math,hitcountarr); 
+            var max = Math.max.apply(Math,hitcountarr);  // the top 10 for each decade is computed based on the hitcount of the Genre, the cumulative hotttnesss value.
             var index = $.inArray(max,hitcountarr);
             
             var tempgenere=genresarr[genresarr.length-1];
@@ -98,16 +98,16 @@ function findTop10()
 
             $(".top-genres").append("<li>"+genresarr.pop()+"</li>")
            
-           // console.log("The genre is: "+genresarr.pop());
+           
             hitcountarr.pop();
             hotttnesssarr.pop();
             familiarityarr.pop();
 
-          //  (genresarr[$.inArray(max,hitcountarr)]);
+          
 
         }
 
-        $("#waitmessage").html("done");
+        
     
 }
 
@@ -158,7 +158,7 @@ function getall(val)
         fetchdata(+val,cb_fetchdata);
     
 }
-function getTop10ByDecade(decade)
+function getTop10ByDecade(decade) //get 100 artist for each decade. Top artist. and return to compute top 10
 {
     decade=+decade;
     var Fdecade = decade+"-"+(decade+10);
